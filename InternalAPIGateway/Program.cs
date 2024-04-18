@@ -1,5 +1,6 @@
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
@@ -34,6 +35,10 @@ builder.Services
 // Add Ocelot
 builder.Services.AddOcelot(GetOcelotConfiguration(strEnv));
 
+builder.Services.AddLogging(loggingBuilder =>
+{
+    loggingBuilder.AddSeq(builder.Configuration.GetSection("Seq"));
+});
 //builder.Host.UseSerilog((context, services, loggerConfiguration) =>
 //{
 //    // Configure here Serilog instance...

@@ -20,6 +20,18 @@
         "Limit": 1
       }
     },
+    {
+      "DownstreamPathTemplate": "/swagger/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7260
+        }
+      ],
+      "UpstreamPathTemplate": "/swagger/{everything}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "POST" ],
+    },
     // Nodejs
     {
       "DownstreamPathTemplate": "/wc/{everything}",

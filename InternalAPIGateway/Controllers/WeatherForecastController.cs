@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace InternalAPIGateway.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("gtw/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -21,6 +21,8 @@ namespace InternalAPIGateway.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
+            _logger.LogInformation("GetWeatherForecast called", System.Reflection.MethodBase.GetCurrentMethod().Name);
+            _logger.LogInformation(System.Reflection.MethodBase.GetCurrentMethod().Name);
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
