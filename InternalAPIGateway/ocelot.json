@@ -12,13 +12,13 @@
       ],
       "UpstreamPathTemplate": "/gtw/{everything}",
       "UpstreamHttpMethod": [ "GET", "PUT", "POST" ],
-      "RateLimitOptions": {
-        "ClientWhiteList": [],
-        "EnableRateLimiting": true,
-        "Period": "1s",
-        "PeriodTimespan": 1,
-        "Limit": 1
-      }
+      //"RateLimitOptions": {
+      //  "ClientWhiteList": [],
+      //  "EnableRateLimiting": true,
+      //  "Period": "1s",
+      //  "PeriodTimespan": 1,
+      //  "Limit": 1
+      //}
     },
     {
       "DownstreamPathTemplate": "/swagger/{everything}",
@@ -55,12 +55,12 @@
   ],
   "SwaggerEndPoints": [
     {
-      "Key": "ibbmembers",
+      "Key": "ServiceSampleSwagger",
       "Config": [
         {
-          "Name": "(sysinfra) Create Account IBB API",
+          "Name": "Service Sample Swagger",
           "Version": "v1",
-          "Url": "http://css-ibbmember-service-dev/swagger/v1/swagger.json" // IP Address information can be get in Kubernetes Pod dashboard
+          "Url": "https://localhost:7107/service/sampleswagger/swagger/v1/swagger.json" // IP Address information can be get in Kubernetes Pod dashboard
         }
       ]
     }

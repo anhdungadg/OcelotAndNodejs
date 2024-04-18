@@ -9,7 +9,7 @@ using Ocelot.Middleware;
 
 
 var strEnv = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-
+var ocelotConfiguration = GetOcelotConfiguration(strEnv);
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure CORS
@@ -33,7 +33,7 @@ builder.Services
     .AddCheck("self", () => HealthCheckResult.Healthy(), ["live"]);
 
 // Add Ocelot
-builder.Services.AddOcelot(GetOcelotConfiguration(strEnv));
+builder.Services.AddOcelot(ocelotConfiguration);
 
 builder.Services.AddLogging(loggingBuilder =>
 {
@@ -57,18 +57,29 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddSwaggerForOcelot(ocelotConfiguration, options =>
+{
+    options.GenerateDocsForGatewayItSelf = true;
+});
 
 
 
 var app = builder.Build();
 
+
+
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
+app.UseSwagger(options =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    options.RouteTemplate = "gtw/swagger/v1/swagger.json";
+});
+app.UseSwaggerForOcelotUI();
+
 
 app.UseHttpsRedirection();
 
