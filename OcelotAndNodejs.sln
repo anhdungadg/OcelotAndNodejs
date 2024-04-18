@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternalAPIGateway", "InternalAPIGateway\InternalAPIGateway.csproj", "{241A2C35-2508-484A-8704-89EF4B11BAB3}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "WCBotWebhook", "WCBotWebhook\WCBotWebhook.njsproj", "{C87554C1-A3C4-43A5-9B6F-6ED877651764}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{241A2C35-2508-484A-8704-89EF4B11BAB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{241A2C35-2508-484A-8704-89EF4B11BAB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{241A2C35-2508-484A-8704-89EF4B11BAB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{241A2C35-2508-484A-8704-89EF4B11BAB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C87554C1-A3C4-43A5-9B6F-6ED877651764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C87554C1-A3C4-43A5-9B6F-6ED877651764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C87554C1-A3C4-43A5-9B6F-6ED877651764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C87554C1-A3C4-43A5-9B6F-6ED877651764}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA2203D3-015B-4C1F-AF2D-6A5EE1EA89D0}
+	EndGlobalSection
+EndGlobal
