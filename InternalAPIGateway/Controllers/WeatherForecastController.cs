@@ -22,7 +22,7 @@ namespace InternalAPIGateway.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
             _logger.LogInformation("GetWeatherForecast called {MethodName}", System.Reflection.MethodBase.GetCurrentMethod().Name);
-            _logger.LogInformation(System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),

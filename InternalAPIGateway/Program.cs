@@ -95,6 +95,8 @@ app.Map("/gtw/hi", async (context) =>
 
 app.UseCors("CorsPolicy");
 
+app.Logger.LogInformation("Starting up {Environment}", strEnv);
+
 await app.UseOcelot();
 await app.RunAsync();
 
